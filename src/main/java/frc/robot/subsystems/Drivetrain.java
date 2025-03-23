@@ -6,6 +6,7 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.DRIVE_MOTORS;
@@ -37,6 +38,29 @@ public class Drivetrain extends SubsystemBase {
 
     public void tankDrive(double speedL, double speedR) {
         driveTrain.tankDrive(-speedL, speedR);
+    }
+
+    public double getFrontLeftMotor(){
+        return FrontLeftMotor.get();
+    }
+
+    public double getFrontRightMotor(){
+        return FrontRightMotor.get();
+    }
+    public double getBackLeftMotor(){
+        return BackLeftMotor.get();
+    }
+    public double getBackRightMotor(){
+        return BackRightMotor.get();
+    }
+
+    public void getReadings(){
+        
+        SmartDashboard.putString("DB/String 1", "Front Left Motor Value: " + String.valueOf(getFrontLeftMotor()));
+        SmartDashboard.putString("DB/String 2", "Front Right Motor Value: " + String.valueOf(getFrontRightMotor()));
+        SmartDashboard.putString("DB/String 3", "Back Left Motor Value: " + String.valueOf(getBackLeftMotor()));
+        SmartDashboard.putString("DB/String 4", "Back Right Motor Value: " + String.valueOf(getBackRightMotor()));
+
     }
 
     /**

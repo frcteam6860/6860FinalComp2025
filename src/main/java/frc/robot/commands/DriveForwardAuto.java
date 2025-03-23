@@ -42,6 +42,7 @@ public class DriveForwardAuto extends Command {
             timer.stop();
             end(false);
         }
+        drivetrain.getReadings();
     }
 
     // Called once the command ends or is interrupted.

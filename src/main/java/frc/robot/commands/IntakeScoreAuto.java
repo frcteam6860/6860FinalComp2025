@@ -59,6 +59,8 @@ public class IntakeScoreAuto extends Command {
             intake.intake(0);
             end(false);
         }
+        drivetrain.getReadings();
+
     }
 
 
